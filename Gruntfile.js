@@ -72,22 +72,31 @@ module.exports = function(grunt) {
     },
 
     /**
-     * grunt-contrib-watch
+     * grunt-sass
+     * @see https://github.com/sindresorhus/grunt-sass
+     */
+    sass: {
+      options: {
+        sourceMap: true
+      },
+      files: {
+        'css/style.css': 'src/sass/style.sass'
+      }
+    },
+
+    /**
+     * grunt-contrib-cssmin
      * @see
      */
-    watch: {
-
-      scripts: {
-        files: ['**/*.js'],
-        tasks: ['jshint'],
-        options: {
-          spawn: false,
-        },
+    cssmin: {
+      options: {
+        roundingPrecision: 3,
+        sourceMap: true
       },
-
-      css: {
-        files: '<%= css.lib_test.src %>',
-        tasks: ['default']
+      dist: {
+        files: {
+          'css/style.css': 'css/style.css'
+        }
       }
     },
 
@@ -100,9 +109,34 @@ module.exports = function(grunt) {
         browsers: ['last 2 versions', 'ie 8', 'ie 9'],
         diff: false // Set it to true if you want to get an output patch file
       },
-      your_target: {
-        // Target-specific file lists and/or options go here.
+      dist: {
+        expand: true,
+        flatten: true,
+        src: 'css/style.css',
+        dest: 'css/.'
+      }
+    },
+
+    /**
+     * grunt-contrib-watch
+     * @see
+     */
+    watch: {
+
+      options: {
+        spawn: false,
       },
+
+      scripts: {
+        files: ['**/*.js'],
+        tasks: ['jshint'],
+
+      },
+
+      css: {
+        files: 'src/sass/**/*.{sass,scss}',
+        tasks: ['sass', 'autoprefixer']
+      }
     },
 
   });
