@@ -4,13 +4,13 @@
 # General
 name: Tesseract
 type: theme
-description: "High-end starterkit for your next Drupal 8 project."
+description: 'High-end starterkit for your next Drupal 8 project.'
 package: BRAINSUM
 core: 8.x
 version: 8.x-0.1
 
 libraries:
-  - tesseract/global-styling
+  - tesseract/core
 
 # Can be handy for removing default Drupal 8 or contrib module CSS.
 #
