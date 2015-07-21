@@ -1,6 +1,8 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
+  require('load-grunt-tasks')(grunt);
+
   grunt.initConfig({
 
     // Metadata.
@@ -22,8 +24,8 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['lib/<%= pkg.name %>.js'],
-        dest: 'dist/<%= pkg.name %>.js'
+        src: ['src/scripts/scripts.js'],
+        dest: 'js/scripts.js'
       }
     },
 
@@ -37,7 +39,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: '<%= concat.dist.dest %>',
-        dest: 'dist/<%= pkg.name %>.min.js'
+        dest: 'js/scripts.min.js'
       }
     },
 
@@ -59,22 +61,14 @@ module.exports = function(grunt) {
         boss: true,
         eqnull: true,
         browser: true,
-        globals: {}
+        globals: {},
       },
       gruntfile: {
-        src: 'Gruntfile.js'
+        src: ['Gruntfile.js', 'js/scripts.js']
       },
-      lib_test: {
+      test: {
         src: ['lib/**/*.js', 'test/**/*.js']
       }
-    },
-
-    /**
-     * grunt-contrib-qunit
-     * @see
-     */
-    qunit: {
-      files: ['test/**/*.html']
     },
 
     /**
@@ -82,13 +76,18 @@ module.exports = function(grunt) {
      * @see
      */
     watch: {
-      gruntfile: {
-        files: '<%= jshint.gruntfile.src %>',
-        tasks: ['jshint:gruntfile']
+
+      scripts: {
+        files: ['**/*.js'],
+        tasks: ['jshint'],
+        options: {
+          spawn: false,
+        },
       },
-      lib_test: {
-        files: '<%= jshint.lib_test.src %>',
-        tasks: ['jshint:lib_test', 'qunit']
+
+      css: {
+        files: '<%= css.lib_test.src %>',
+        tasks: ['default']
       }
     },
 
@@ -108,14 +107,7 @@ module.exports = function(grunt) {
 
   });
 
-  // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-qunit');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-
   // Default task.
-  grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify', 'watch']);
+  grunt.registerTask('default', ['concat', 'uglify', 'watch']);
 
 };
