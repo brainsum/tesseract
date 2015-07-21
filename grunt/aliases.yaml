@@ -1,0 +1,14 @@
+default:
+  - 'css'
+  - 'js'
+  - 'watch'
+
+css:
+  - 'sass'
+  - 'autoprefixer'
+  - 'cssmin'
+
+js:
+  # - 'jshint'
+  - 'concat'
+  - 'uglify'
