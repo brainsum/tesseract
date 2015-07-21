@@ -1,0 +1,41 @@
+# intro comment here
+# https://www.drupal.org/node/2349827
+
+# General
+name: Tesseract
+type: theme
+description: "High-end starterkit for your next Drupal 8 project."
+package: BRAINSUM
+core: 8.x
+version: 8.x-0.1
+
+libraries:
+  - tesseract/global-styling
+
+# Can be handy for removing default Drupal 8 or contrib module CSS.
+#
+# stylesheets-remove:
+#   - '@classy/css/layout.css'
+#   - core/assets/vendor/normalize-css/normalize.css
+
+regions:
+  header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  help: Help
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  highlighted: Highlighted
+  featured_top: 'Featured top'
+  breadcrumb: Breadcrumb
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  featured_bottom_first: 'Featured bottom first'
+  featured_bottom_second: 'Featured bottom second'
+  featured_bottom_third: 'Featured bottom third'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+  footer_fourth: 'Footer fourth'
+  footer_fifth: 'Footer fifth
