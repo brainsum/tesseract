@@ -1,0 +1,5 @@
+# Schema for the configuration files of the Tesseract theme.
+
+tesseract.settings:
+  type: theme_settings
+  label: 'Tesseract setting
