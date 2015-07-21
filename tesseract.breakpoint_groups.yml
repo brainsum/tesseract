@@ -1,0 +1,23 @@
+breakpoints:
+     - theme.tesseract.mobile
+     - theme.tesseract.tablet
+     - theme.tesseract.desktop
+     - theme.tesseract.wide
+
+id: tesseract
+label: Tesseract
+
+# Groups
+#
+# group1:
+#     label: Group 1
+#     breakpoints:
+#       - mobile
+#       - desktop
+
+# group2:
+#   label: Group 2
+#   breakpoints:
+#      - mobile
+#      - tablet
+#      - desktop
