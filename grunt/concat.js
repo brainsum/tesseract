@@ -7,7 +7,7 @@ module.exports = {
 
   options: {
     banner: '<%= banner %>',
-    stripBanners: false
+    stripBanners: true
   },
 
   dist: {
