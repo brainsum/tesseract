@@ -4,7 +4,7 @@
   "author": "BRAINSUM (info@brainsum.com)",
   "homepage": "http://brainsum.com/",
   "repository": "gergelypap/tesseract",
-  "license": "GPL",
+  "license": "GPL-3.0",
   "keywords": [
     "drupal8",
     "twig",
