@@ -1,0 +1,28 @@
+{
+  "name": "tesseract",
+  "version": "0.0.1",
+  "homepage": "https://github.com/gergelypap/tesseract",
+  "authors": [
+    "pgergo <pgege42@gmail.com>"
+  ],
+  "description": "High-end starterkit for your next Drupal 8 project.",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "drupal-8",
+    "starterkit",
+    "theme",
+    "twig",
+    "tesseract"
+  ],
+  "license": "GPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ]
+}
