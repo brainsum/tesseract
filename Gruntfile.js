@@ -29,6 +29,8 @@ module.exports = function(grunt) {
         srcLESS: '<%= paths.srcRoot %>/less',
         srcJS: '<%= paths.srcRoot %>/scripts',
         srcVendor: '<%= paths.srcRoot %>/vendor',
+
+        img: '<%= paths.distRoot %>/img'
       },
 
       /*!
