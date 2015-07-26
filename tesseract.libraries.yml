@@ -9,7 +9,6 @@ core:
       # css/print.css: { media: print }
   js:
     dist/js/app.min.js: {}
-
-  # Add this if we need jQuery loaded by default.
-  # dependencies:
-  #   - core/jquery
+  dependencies:
+    - core/jquery
+    - core/drupal

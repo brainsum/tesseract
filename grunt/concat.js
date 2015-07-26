@@ -13,12 +13,12 @@ module.exports = {
     src: [
 
       // Bootstrap (uncomment needed components)
-      // '<%= paths.srcVendor %>/bootstrap/js/transition.js',
+      '<%= paths.srcVendor %>/bootstrap/js/transition.js',
       // '<%= paths.srcVendor %>/bootstrap/js/alert.js',
       // '<%= paths.srcVendor %>/bootstrap/js/button.js',
       // '<%= paths.srcVendor %>/bootstrap/js/carousel.js',
-      // '<%= paths.srcVendor %>/bootstrap/js/collapse.js',
-      // '<%= paths.srcVendor %>/bootstrap/js/dropdown.js',
+      '<%= paths.srcVendor %>/bootstrap/js/collapse.js',
+      '<%= paths.srcVendor %>/bootstrap/js/dropdown.js',
       // '<%= paths.srcVendor %>/bootstrap/js/modal.js',
       // '<%= paths.srcVendor %>/bootstrap/js/tooltip.js',
       // '<%= paths.srcVendor %>/bootstrap/js/popover.js',
@@ -27,7 +27,7 @@ module.exports = {
       // '<%= paths.srcVendor %>/bootstrap/js/affix.js',
 
       // jQuery
-      '<%= paths.srcVendor %>/jquery/dist/jquery.js',
+      // '<%= paths.srcVendor %>/jquery/dist/jquery.js',
 
       // Tesseract
       '<%= paths.srcJS %>/**/*.js',
