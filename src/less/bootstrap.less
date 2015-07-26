@@ -5,13 +5,10 @@
  */
 
 @bootstrap: "../vendor/bootstrap/less";
-@bootstrap-mixins: "../vendor/bootstrap/less/mixins";
+@bootstrap-mixins: "@{bootstrap}/mixins";
 
 // Core variables and mixins
-@import "@{bootstrap}/variables.less";
-
-// Mixins
-// --------------------------------------------------
+@import "bootstrap-customize.less";
 
 // Utilities
 @import "@{bootstrap-mixins}/hide-text.less";
