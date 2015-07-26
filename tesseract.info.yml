@@ -1,7 +1,7 @@
 # intro comment here
 # https://www.drupal.org/node/2349827
 
-# General
+# General settings.
 name: Tesseract
 type: theme
 description: 'High-end starterkit for your next Drupal 8 project.'
@@ -12,12 +12,13 @@ version: 8.x-0.1
 libraries:
   - tesseract/core
 
-# Can be handy for removing default Drupal 8 or contrib module CSS.
-#
-# stylesheets-remove:
-#   - '@classy/css/layout.css'
-#   - core/assets/vendor/normalize-css/normalize.css
+# Remove default css files.
+stylesheets-remove:
+  - core/assets/vendor/normalize-css/normalize.css
+  - core/modules/system/css/system.module.css
+  - core/modules/system/css/system.theme.css
 
+# Regions.
 regions:
   header: Header
   primary_menu: 'Primary menu'
