@@ -1,8 +1,10 @@
 {
-  "name": "brainsum/tesseract",
+  "name": "brainsum-tesseract",
+  "title": "Tesseract",
+  "version": "0.0.1",
   "description": "High-end starterkit for your next Drupal 8 project.",
   "author": "BRAINSUM (info@brainsum.com)",
-  "homepage": "http://brainsum.com/",
+  "homepage": "http://brainsum.com",
   "repository": "gergelypap/tesseract",
   "license": "GPL-3.0",
   "keywords": [
