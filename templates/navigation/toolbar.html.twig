@@ -22,7 +22,7 @@
 #}
 <div{{ attributes.addClass('toolbar') }}>
   <nav{{ toolbar_attributes.addClass('toolbar-bar', 'clearfix') }}>
-    <h2 class="visually-hidden">{{ toolbar_heading }}</h2>
+    <h2 class="sr-only">{{ toolbar_heading }}</h2>
     {% for tab in tabs %}
       <div{{ tab.attributes.addClass('toolbar-tab') }}>{{ tab.link }}</div>
     {% endfor %}
@@ -32,7 +32,7 @@
     <div{{ tray.attributes }}>
     {% if tray.label %}
       <nav class="toolbar-lining clearfix" role="navigation" aria-label="{{ tray.label }}">
-          <h3 class="toolbar-tray-name visually-hidden">{{ tray.label }}</h3>
+          <h3 class="toolbar-tray-name sr-only">{{ tray.label }}</h3>
     {% else %}
       <nav class="toolbar-lining clearfix" role="navigation">
     {% endif %}

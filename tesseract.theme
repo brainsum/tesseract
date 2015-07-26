@@ -11,5 +11,5 @@ require_once 'templates/init.php';
  * Implements hook_preprocess_HOOK() for HTML document templates.
  */
 function tesseract_preprocess_html(&$vars) {
-  kint($vars);
+
 }
