@@ -60,6 +60,46 @@
 <div class="layout-container">
 
   <header role="banner">
+
+      <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+
+          {# Brand and toggle get grouped for better mobile display #}
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            {# Logo #}
+            {% if logo %}
+              <a href="{{ front_page }}" class="navbar-brand" title="{{ 'Home'|t }}" rel="home">
+                <img src="{{ logo }}" alt="{{ 'Home'|t }}"/>
+              </a>
+            {% elseif title %}
+              <div class="navbar-brand">
+                {% if title %}
+                  <a href="{{ front_page }}" class="navbar-brand" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
+                {% endif %}
+              </div>
+            {% endif %}
+
+            {% if site_slogan %}
+              <div class="site-slogan navbar-text">{{ site_slogan }}</div>
+            {% endif %}
+          </div>
+
+          {% if page.primary_menu %}
+            <div class="collapse navbar-collapse navbar-right" id="collapseMenu">
+                {{ page.primary_menu }}
+            </div>
+          {% endif %}
+      </nav>
+  </header>
+
+ {#  <header role="banner">
     {% if logo %}
       <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">
         <img src="{{ logo }}" alt="{{ 'Home'|t }}"/>
@@ -69,7 +109,6 @@
     {% if site_name or site_slogan %}
       <div class="name-and-slogan">
 
-        {# Use h1 when the content title is empty #}
         {% if title %}
           <strong class="site-name">
             <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
@@ -83,13 +122,12 @@
         {% if site_slogan %}
           <div class="site-slogan">{{ site_slogan }}</div>
         {% endif %}
-      </div>{# ./name-and-slogan #}
+      </div>
     {% endif %}
 
     {{ page.header }}
-  </header>
+  </header> #}
 
-  {{ page.primary_menu }}
   {{ page.secondary_menu }}
 
   {{ page.breadcrumb }}
