@@ -11,8 +11,8 @@ module.exports = {
     outputStyle: 'expanded'
   },
   files: {
-  	src: '<%= paths.srcSASS %>/<%= names.distCSS %>.sass',
-  	dest: '<%= paths.distCSS %>/<%= names.distCSS %>.css'
+    src: '<%= paths.srcSASS %>/<%= names.distCSS %>.sass',
+    dest: '<%= paths.distCSS %>/<%= names.distCSS %>.css'
   }
 
 };

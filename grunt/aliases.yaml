@@ -1,12 +1,18 @@
 # Default task: run all CSS and JS tasks, then watch
 default:
-  - 'css'
+  - 'css:sass'
   - 'js'
   - 'watch'
 
 # Compile SASS, auto-prefix and minify CSS
-css:
+'css:sass':
   - 'sass'
+  - 'autoprefixer'
+  - 'cssmin'
+
+# Compile LESS, auto-prefix and minify CSS
+'css:less':
+  - 'less'
   - 'autoprefixer'
   - 'cssmin'
 
