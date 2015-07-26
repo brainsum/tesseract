@@ -1,2 +1,2 @@
-.box{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-sizing:border-box;box-sizing:border-box;background:-webkit-gradient(linear,left top,left bottom,color-stop(red,from),color-stop(blue,to));background:-webkit-linear-gradient(from red,to #00f 50%);background:linear-gradient(from red,to #00f 50%);-webkit-border-radius:5px;border-radius:5px;-webkit-box-shadow:0 0 5px 5px rgba(0,0,0,.5);box-shadow:0 0 5px 5px rgba(0,0,0,.5);width:-webkit-calc(100% - 10px);width:calc(100% - 10px);opacity:.5}
+
 /*# sourceMappingURL=app.min.css.map */
