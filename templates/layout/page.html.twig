@@ -60,7 +60,6 @@
 <div class="layout-container">
 
   <header role="banner">
-
       <nav class="navbar navbar-default navbar-static-top">
         <div class="container-fluid">
 
@@ -91,70 +90,48 @@
             {% endif %}
           </div>
 
-          {% if page.primary_menu %}
-            <div class="collapse navbar-collapse navbar-right" id="collapseMenu">
-                {{ page.primary_menu }}
+          {% if page.primary_menu or page.secondary_menu %}
+            <div class="collapse navbar-collapse navbar-primary" id="collapseMenu">
+              {% if page.secondary_menu %}
+                <div class="menu menu-secondary navbar-right">
+                  {{- page.secondary_menu -}}
+                </div>
+              {% endif %}
+              {% if page.primary_menu %}
+                <div class="menu menu-primary navbar-right">
+                  {{- page.primary_menu -}}
+                </div>
+              {% endif %}
             </div>
           {% endif %}
       </nav>
   </header>
 
- {#  <header role="banner">
-    {% if logo %}
-      <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">
-        <img src="{{ logo }}" alt="{{ 'Home'|t }}"/>
-      </a>
-    {% endif %}
+  {{- page.breadcrumb -}}
 
-    {% if site_name or site_slogan %}
-      <div class="name-and-slogan">
+  {{- page.highlighted -}}
 
-        {% if title %}
-          <strong class="site-name">
-            <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
-          </strong>
-        {% else %}
-          <h1 class="site-name">
-            <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
-          </h1>
-        {% endif %}
-
-        {% if site_slogan %}
-          <div class="site-slogan">{{ site_slogan }}</div>
-        {% endif %}
-      </div>
-    {% endif %}
-
-    {{ page.header }}
-  </header> #}
-
-  {{ page.secondary_menu }}
-
-  {{ page.breadcrumb }}
-
-  {{ page.highlighted }}
-
-  {{ page.help }}
+  {{- page.help -}}
 
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
     <div class="layout-content">
-      {{ page.highlighted }}
+      {{- page.highlighted -}}
 
-      {{ title_prefix }}
+      {{- title_prefix -}}
       {% if title %}
         <h1>{{ title }}</h1>
       {% endif %}
-      {{ title_suffix }}
+      {{- title_suffix -}}
 
-      {{ tabs }}
+      {{- tabs -}}
 
       {% if action_links %}
         <nav class="action-links">{{ action_links }}</nav>
       {% endif %}
 
-      {{ page.content }}
+      {{- page.content -}}
     </div>{# /.layout-content #}
 
     {% if page.sidebar_first %}

@@ -46,7 +46,7 @@
 #}
 {%
   set classes = [
-    'form-item',
+    'form-group',
     'js-form-type-' ~ type|clean_class,
     'form-type-' ~ type|clean_class,
     'form-item-' ~ name|clean_class,
@@ -55,39 +55,49 @@
     errors ? 'form-error',
   ]
 %}
+
 {%
   set description_classes = [
-    'description',
+    'help-block',
     description_display == 'invisible' ? 'sr-only',
   ]
 %}
+
 <div{{ attributes.addClass(classes) }}>
+
   {% if label_display in ['before', 'invisible'] %}
     {{ label }}
   {% endif %}
+
   {% if prefix is not empty %}
     <span class="field-prefix">{{ prefix }}</span>
   {% endif %}
+
   {% if description_display == 'before' and description.content %}
     <div{{ description.attributes }}>
       {{ description.content }}
     </div>
   {% endif %}
+
   {{ children }}
+
   {% if suffix is not empty %}
     <span class="field-suffix">{{ suffix }}</span>
   {% endif %}
+
   {% if label_display == 'after' %}
     {{ label }}
   {% endif %}
+
   {% if errors %}
     <div class="form-error-message">
       <strong>{{ errors }}</strong>
     </div>
   {% endif %}
+
   {% if description_display in ['after', 'invisible'] and description.content %}
-    <div{{ description.attributes.addClass(description_classes) }}>
+    <p{{ description.attributes.addClass(description_classes) }}>
       {{ description.content }}
-    </div>
+    </p>
   {% endif %}
 </div>
