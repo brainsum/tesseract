@@ -1,6 +1,8 @@
 /**
  * grunt-contrib-jshint
  * @see
+ *
+ * @todo  stuff
  */
 
 module.exports = {
@@ -21,7 +23,7 @@ module.exports = {
     globals: {},
   },
   gruntfile: {
-    src: ['Gruntfile.js', 'js/scripts.js']
+    src: ['Gruntfile.js', 'js/app.js']
   },
   test: {
     src: ['lib/**/*.js', 'test/**/*.js']

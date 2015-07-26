@@ -1,6 +1,6 @@
 /**
  * grunt-contrib-cssmin
- * @see
+ * @see https://github.com/gruntjs/grunt-contrib-cssmin
  */
 
 module.exports = {
@@ -9,10 +9,10 @@ module.exports = {
     roundingPrecision: 3,
     sourceMap: true
   },
-  dist: {
-    files: {
-      'css/style.css': 'css/style.css'
-    }
+
+  files: {
+    src: '<%= paths.distCSS %>/<%= names.distCSS %>.css',
+    dest: '<%= paths.distCSS %>/<%= names.distCSS %>.min.css'
   }
 
 };

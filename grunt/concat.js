@@ -1,18 +1,17 @@
 /**
  * grunt-contrib-concat
- * @see
+ * @see https://github.com/gruntjs/grunt-contrib-concat
  */
 
 module.exports = {
 
   options: {
     banner: '<%= banner %>',
-    stripBanners: true
   },
 
-  dist: {
-    src: ['src/scripts/**/*.js'],
-    dest: 'js/scripts.js'
+  files: {
+    src: '<%= paths.srcJS %>/**/*.js',
+    dest: '<%= paths.distJS %>/<%= names.distJS %>.js'
   }
 
 };

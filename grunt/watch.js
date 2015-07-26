@@ -10,12 +10,12 @@ module.exports = {
   },
 
   js: {
-    files: ['src/scripts/**/*.js'],
+    files: ['<%= paths.srcJS %>/**/*.js'],
     tasks: ['concat', 'uglify'],
   },
 
   css: {
-    files: 'src/sass/**/*.{sass,scss}',
-    tasks: ['sass', 'autoprefixer']
+    files: '<%= paths.srcSASS %>/**/*.{sass,scss}',
+    tasks: ['sass', 'autoprefixer', 'cssmin']
   },
 };

@@ -6,10 +6,13 @@
 module.exports = {
 
   options: {
-    sourceMap: true
+    sourceMap: false,
+    sourceComments: false,
+    outputStyle: 'expanded'
   },
   files: {
-    'css/style.css': 'src/sass/style.sass'
+  	src: '<%= paths.srcSASS %>/<%= names.distCSS %>.sass',
+  	dest: '<%= paths.distCSS %>/<%= names.distCSS %>.css'
   }
 
 };

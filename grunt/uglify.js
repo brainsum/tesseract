@@ -10,8 +10,8 @@ module.exports = {
   },
 
   files: {
-    src: 'js/scripts.js',
-    dest: 'js/scripts.min.js'
+    src: '<%= paths.distJS %>/<%= names.distJS %>.js',
+    dest: '<%= paths.distJS %>/<%= names.distJS %>.min.js'
   }
 
 };
