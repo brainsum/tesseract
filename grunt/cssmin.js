@@ -7,7 +7,8 @@ module.exports = {
 
   options: {
     roundingPrecision: 3,
-    sourceMap: true
+    sourceMap: true,
+    keepSpecialComments: 0
   },
 
   files: {

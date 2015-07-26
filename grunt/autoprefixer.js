@@ -13,7 +13,7 @@ module.exports = {
     expand: true,
     flatten: true,
     src: '<%= paths.distCSS %>/<%= names.distCSS %>.css',
-    dest: '<%= paths.distCSS %>/.'
+    dest: '<%= paths.distCSS %>'
   }
 
 };
