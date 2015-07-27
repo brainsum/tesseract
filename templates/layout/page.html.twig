@@ -60,63 +60,78 @@
 <div class="layout-container">
 
   <header role="banner">
-    {% if logo %}
-      <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">
-        <img src="{{ logo }}" alt="{{ 'Home'|t }}"/>
-      </a>
-    {% endif %}
+      <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
 
-    {% if site_name or site_slogan %}
-      <div class="name-and-slogan">
+          {# Brand and toggle get grouped for better mobile display #}
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
 
-        {# Use h1 when the content title is empty #}
-        {% if title %}
-          <strong class="site-name">
-            <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
-          </strong>
-        {% else %}
-          <h1 class="site-name">
-            <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
-          </h1>
-        {% endif %}
+            {# Logo #}
+            {% if logo %}
+              <a href="{{ front_page }}" class="navbar-brand" title="{{ 'Home'|t }}" rel="home">
+                <img src="{{ logo }}" alt="{{ 'Home'|t }}"/>
+              </a>
+            {% elseif title %}
+              <div class="navbar-brand">
+                {% if title %}
+                  <a href="{{ front_page }}" class="navbar-brand" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
+                {% endif %}
+              </div>
+            {% endif %}
 
-        {% if site_slogan %}
-          <div class="site-slogan">{{ site_slogan }}</div>
-        {% endif %}
-      </div>{# ./name-and-slogan #}
-    {% endif %}
+            {% if site_slogan %}
+              <div class="site-slogan navbar-text">{{ site_slogan }}</div>
+            {% endif %}
+          </div>
 
-    {{ page.header }}
+          {% if page.primary_menu or page.secondary_menu %}
+            <div class="collapse navbar-collapse navbar-primary" id="collapseMenu">
+              {% if page.secondary_menu %}
+                <div class="menu menu-secondary navbar-right">
+                  {{- page.secondary_menu -}}
+                </div>
+              {% endif %}
+              {% if page.primary_menu %}
+                <div class="menu menu-primary navbar-right">
+                  {{- page.primary_menu -}}
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+      </nav>
   </header>
 
-  {{ page.primary_menu }}
-  {{ page.secondary_menu }}
+  {{- page.breadcrumb -}}
 
-  {{ page.breadcrumb }}
+  {{- page.highlighted -}}
 
-  {{ page.highlighted }}
-
-  {{ page.help }}
+  {{- page.help -}}
 
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
     <div class="layout-content">
-      {{ page.highlighted }}
+      {{- page.highlighted -}}
 
-      {{ title_prefix }}
+      {{- title_prefix -}}
       {% if title %}
         <h1>{{ title }}</h1>
       {% endif %}
-      {{ title_suffix }}
+      {{- title_suffix -}}
 
-      {{ tabs }}
+      {{- tabs -}}
 
       {% if action_links %}
         <nav class="action-links">{{ action_links }}</nav>
       {% endif %}
 
-      {{ page.content }}
+      {{- page.content -}}
     </div>{# /.layout-content #}
 
     {% if page.sidebar_first %}

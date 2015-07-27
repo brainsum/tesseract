@@ -5,6 +5,7 @@
 
 module.exports = {
 
+  // @see http://jshint.com/docs/options/
   options: {
     curly: true,
     eqeqeq: true,
@@ -18,13 +19,21 @@ module.exports = {
     boss: true,
     eqnull: true,
     browser: true,
-    globals: {},
+    esnext: false,
+    jquery: true,
+
+    // Set available global variables.
+    globals: {
+      console: true,
+      window: true,
+      alert: true
+    },
   },
-  gruntfile: {
-    src: ['Gruntfile.js', 'js/scripts.js']
-  },
-  test: {
-    src: ['lib/**/*.js', 'test/**/*.js']
+
+  files: {
+    src: [
+      '<%= paths.srcJS %>/**/*.js'
+    ]
   }
 
 };

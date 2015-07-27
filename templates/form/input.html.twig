@@ -10,4 +10,11 @@
  * @see template_preprocess_input()
  */
 #}
-<input{{ attributes }} />{{ children }}
+
+{%
+  set classes = [
+    attributes.offsetGet('type').value not in ['button', 'submit', 'reset'] ? 'form-control'
+  ]
+%}
+
+<input{{ attributes.addClass(classes) }} />{{ children }}

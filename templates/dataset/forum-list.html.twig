@@ -54,7 +54,7 @@
         #}
         {% for i in 1..forum.depth if forum.depth > 0 %}<div class="indented">{% endfor %}
           <div class="forum__icon forum-status-{{ forum.icon_class }}" title="{{ forum.icon_title }}">
-            <span class="visually-hidden">{{ forum.icon_title }}</span>
+            <span class="sr-only">{{ forum.icon_title }}</span>
           </div>
           <div class="name"><a href="{{ forum.link }}">{{ forum.label }}</a></div>
           {% if forum.description.value %}
