@@ -32,6 +32,6 @@
     "load-grunt-config": "^0.17.2"
   },
   "scripts": {
-    "postinstall": "bower install && grunt"
+    "postinstall": "node_modules/.bin/bower install --allow-root"
   }
 }
