@@ -12,9 +12,14 @@
 #}
 
 {%
-  set classes = [
-    attributes.offsetGet('type').value not in ['button', 'submit', 'reset'] ? 'form-control'
-  ]
+  set value = attributes.offsetGet('value').value
 %}
 
-<input{{ attributes.addClass(classes) }} />{{ children }}
+{% if attributes.offsetGet('type').value not in ['button', 'submit', 'reset'] %}
+  <input{{ attributes.addClass('form-control') }} />
+{% else %}
+  <button{{ attributes.addClass('btn') }}>
+    {{- value -}}
+  </button>
+{% endif %}
+{{- children -}}
